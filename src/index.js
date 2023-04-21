@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import TodoApp from './components/TodoApp';
 import reportWebVitals from './reportWebVitals';
+import Navbar from './components/Navbar';
+import Modal from './components/Modal';
+import { BrowserRouter as Router } from "react-router-dom";
+import './styles/app.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <TodoApp />
+    </Router>
   </React.StrictMode>
 );
 
