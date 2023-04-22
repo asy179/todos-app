@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaPlusCircle } from "react-icons/fa";
+import { FiPlusCircle } from "react-icons/fi";
 import { useTodosContext } from '../context/TodosContext';
 import { useTodosStore } from '../store';
 
@@ -33,7 +33,7 @@ const InputTodo = () => {
           onChange={handleChange}
           className="input-text"
         />
-        <button className="input-submit" > <FaPlusCircle /></button>
+        <button className="input-submit" > <FiPlusCircle style={{ fontSize: "26px" }}/></button>
       </form>
       <span className="submit-warning">{message}</span>
     </>

@@ -4,7 +4,8 @@ import { useTodosContext } from '../context/TodosContext';
 import { useTodosStore } from '../store';
 import { useAuthContext } from '../context/AuthContext';
 import { FaTrash } from "react-icons/fa";
-import { AiFillEdit } from "react-icons/ai";
+import { FiEdit, FiTrash } from "react-icons/fi";
+import { MdRampRight } from 'react-icons/md';
 
 const TodoItem = ({ itemProp }) => {
     const handleChange = useTodosStore((state) => state.handleChange);
@@ -15,8 +16,8 @@ const TodoItem = ({ itemProp }) => {
     const editInputRef = useRef(null);
     const completedStyle = {
       fontStyle: 'italic',
-      color: '#595959',
-      opacity: 0.4,
+      color: '#523600',
+      opacity: 0.8,
       textDecoration: 'line-through',
     };
     const { user } = useAuthContext();
@@ -39,18 +40,23 @@ const TodoItem = ({ itemProp }) => {
     return (
       <li className={styles.item}>
         <div className={styles.content} style={viewMode}>
-          <input type="checkbox"
-          checked={itemProp.completed}
-          onChange={() => handleChange(itemProp.id)}/>
-          {user && (<button onClick={handleEditing}> 
-            <AiFillEdit style={{ color: "#5e5e5e", fontSize: "16px" }} />
-          </button>)}
-          <button onClick={() => delTodo(itemProp.id)}>
-            <FaTrash style={{ color: "#5e5e5e", fontSize: "16px" }} />
-          </button>
-          <span style={itemProp.completed ? completedStyle : null}>
+          <label className={styles.container}>
+            <input type="checkbox"
+            checked={itemProp.completed}
+            onChange={() => handleChange(itemProp.id)}/>
+            <span className={styles.checkmark}></span>
+            <span style={itemProp.completed ? completedStyle : null}>
             {itemProp.title}
           </span>
+          </label>
+          <div>
+            {user && (<button onClick={handleEditing}> 
+              <FiEdit style={{ fontSize: "18px", marginRight: "10px" }} />
+            </button>)}
+            <button onClick={() => delTodo(itemProp.id)}>
+              <FiTrash style={{ fontSize: "18px" }} />
+            </button>
+          </div>
         </div>
         <input
           type="text"
