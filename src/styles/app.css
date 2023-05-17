@@ -26,7 +26,6 @@ body {
 .wrapper {
   background-image: url('../../assets/background.png');
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
   width: 80%;
   max-width: 580px;
@@ -99,7 +98,7 @@ a {
   color: #FF6392;
 }
 
-ul{
+ul {
   margin-top: 1.3rem;
 }
 
@@ -122,9 +121,11 @@ About route
   text-decoration: none;
   font-weight: bold;
 }
+
 .about_list a:hover {
   color: #DD5E03;
 }
+
 .main_content {
   max-width: 650px;
 }
@@ -151,7 +152,8 @@ Sidebar navigation
 
 button {
   cursor: pointer;
-  background: transparent;;
+  background: transparent;
+  ;
   border: none;
   font-size: 20px;
   color: #DD5E03;
@@ -162,7 +164,8 @@ button {
   left: 30px;
   top: 40px;
   cursor: pointer;
-  background: transparent;;
+  background: transparent;
+  ;
   border: none;
 }
 
@@ -190,7 +193,8 @@ button {
   transform: translateX(0px);
 }
 
-.menu-nav li a, .menu-nav li span {
+.menu-nav li a,
+.menu-nav li span {
   display: block;
   padding: 1rem;
 }
@@ -225,6 +229,7 @@ button {
     grid-template-columns: 200px minmax(0, 1fr);
   }
 }
+
 @media screen and (max-width: 680px) {
   .todos {
     padding: 35px 20px;
