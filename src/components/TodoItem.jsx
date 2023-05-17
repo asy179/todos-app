@@ -16,8 +16,7 @@ const TodoItem = ({ itemProp }) => {
     const editInputRef = useRef(null);
     const completedStyle = {
       fontStyle: 'italic',
-      color: '#523600',
-      opacity: 0.8,
+      opacity: 0.7,
       textDecoration: 'line-through',
     };
     const { user } = useAuthContext();

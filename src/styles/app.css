@@ -1,34 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@400&family=Noto+Serif&display=swap');
+
+:root {
+  --main-bg-color: #FFF4F0;
+  --main-text-color: #3C1518;
+  --color-orange: #FF7F11;
+  --color-pink: #F76C5E;
+  --color-light-pink: #F7A399;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Noto Serif', serif;
   line-height: 1.4;
-  color: #1F1300;
-  background: #FFE5D9;
+  color: var(--main-text-color);
+  background: var(--main-bg-color);
   height: 100vh;
   font-weight: 400;
 }
+
 .wrapper {
-  width: 100%;
-  padding: 8rem 20px 3rem;
-}
-.todos {
+  background-image: url('../../assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 80%;
   max-width: 580px;
-  margin: 0 auto;
+  margin: 5rem auto;
+  border-radius: 50px;
+  box-shadow: 0px 4px 14px 0px rgba(70, 70, 70, 0.38);
 }
+
+.todos {
+  border-radius: 50px;
+  backdrop-filter: blur(85px);
+  padding: 25px 40px;
+  margin: 0 auto;
+  min-height: 415px;
+}
+
 .form-container {
   display: flex;
-  border-radius: calc(0.1 * 100px);
+  border-radius: 15px;
   padding: 7px 5px;
-  box-shadow: 0px 4px 14px 0px rgba(70, 70, 70, 0.38);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   justify-content: space-around;
-  background: transparent;
+  background: rgba(247, 108, 94, 0.75);
   font-size: 1.5rem;
   align-items: flex-end;
 }
+
 .input-text {
   background-color: transparent;
   width: 85%;
@@ -36,26 +61,31 @@ body {
   border-radius: calc(0.5 * 100px);
   font-size: 1rem;
 }
+
 .input-text::placeholder {
-  color: #3D2900;
+  color: var(--main-bg-text);
 }
+
 .input-submit {
   background: transparent;
   height: 100%;
-  color: #3D2900;
+  color: var(--main-bg-color);
   cursor: pointer;
   font-weight: 600;
   margin-right: 10px;
 }
+
 .input-text,
 .input-submit {
   outline: none;
   border: none;
 }
+
 .submit-warning {
   font-size: 13px;
-  color: red;
+  color: rgb(192, 0, 0);
   margin-top: 5px;
+  margin-left: 20px;
   display: block;
 }
 
@@ -63,11 +93,15 @@ a {
   color: #333;
   text-decoration: none;
 }
+
 /* Active route */
 .active {
   color: #FF6392;
 }
 
+ul{
+  margin-top: 1.3rem;
+}
 
 /*==========================
 About route 
@@ -183,11 +217,16 @@ button {
 /* Media Queries */
 @media screen and (min-width: 480px) {
   div.wrapper h1 {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .about {
     display: grid;
     grid-template-columns: 200px minmax(0, 1fr);
+  }
+}
+@media screen and (max-width: 680px) {
+  .todos {
+    padding: 35px 20px;
   }
 }

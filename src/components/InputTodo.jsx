@@ -19,7 +19,7 @@ const InputTodo = () => {
       setTitle('');
       setMessage('')
     } else {
-      setMessage('Please add item.');
+      setMessage('Please add todo text.');
     }
   };
 

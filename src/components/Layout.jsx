@@ -5,7 +5,6 @@ const Layout = () => {
   return (
     <div className="wrapper">
         <AuthProvider>
-            <Navbar />
             <Outlet />
         </AuthProvider>
     </div>
